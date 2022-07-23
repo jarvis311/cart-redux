@@ -1,0 +1,58 @@
+.cartContainer{
+    width: 100%;
+    margin: 0;
+    bottom: 0;
+}
+.cartCard{
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 5px;
+
+}
+.title{
+    width: 20vw;
+    margin-top: 4rem;
+}
+.cartimg{
+    width: 10vw;
+}
+.btnCart{
+    border: none;
+    outline: none;
+    background: #764abc;
+    width: 5vw;
+    padding: 1rem;
+    color: #fff;
+    border-radius: 5px;
+    padding-right: 5rem;
+    font-weight: bold;
+    margin-right: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.tb{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+
+}
+tr{
+    border-bottom: none;
+}
+.price{
+    width: 10vw;
+}
+.total{
+    font-size: 4rem;
+
+}
+
+@media screen and (max-width:600px) {
+    .total{
+        font-size:2rem;
+    }
+    .title{
+        margin-top: 0;
+    }
+}
