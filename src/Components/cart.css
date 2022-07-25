@@ -1,23 +1,35 @@
-.cartContainer{
+.cartContainer {
     width: 100%;
     margin: 0;
     bottom: 0;
-}
-.cartCard{
     display: flex;
+}
+
+.cartCard {
     align-items: center;
     background: #fff;
     border-radius: 5px;
+    margin-top: 2rem;
 
 }
-.title{
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    flex: 0.5;
+
+}
+
+.title {
     width: 20vw;
     margin-top: 4rem;
 }
-.cartimg{
+
+.cartimg {
     width: 10vw;
 }
-.btnCart{
+
+.btnCart {
     border: none;
     outline: none;
     background: #764abc;
@@ -31,28 +43,92 @@
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 }
-.tb{
-    display: flex;
-    justify-content: space-between;
+
+.cartCard {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.cart_img {
     text-align: center;
+}
 
-}
-tr{
-    border-bottom: none;
-}
-.price{
-    width: 10vw;
-}
-.total{
-    font-size: 4rem;
+.cart_img>img {
+    height: 200px;
 
 }
 
+.product_info {
+    width: 40vw;
+    height: 25vh;
+    margin-left: 2rem;
+
+}
+
+.product_info>h4 {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.product_info>h5 {
+    font-size: 18px;
+    color: gray;
+}
+
+.total {
+    display: flex;
+    flex: 0.5;
+    height: auto;
+    flex-direction: column;
+    border: 1px solid gray;
+    background: whitesmoke;
+    border-radius: 20px;
+}
+
+.total_product_info {
+    display: grid;
+    justify-content: space-between;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 20px;
+
+}
+
+
+.total_info>h5 {
+    font-size: 14px;
+
+}
+.total_sum{
+    border-top: 2px solid rgb(229, 197, 197);
+    height: 3rem;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+.sum {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 20px;
+    margin-left: 20px;
+   
+
+}
+.price_total {
+    text-align: right;
+    margin-right: 20px;
+}
+
+.sum > h4{
+    font-size: 18px;
+}
 @media screen and (max-width:600px) {
-    .total{
-        font-size:2rem;
+    .cartContainer {
+        display: grid;
+        grid-template-columns: 1fr;
+        
     }
-    .title{
-        margin-top: 0;
-    }
+  
 }

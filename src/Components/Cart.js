@@ -10,13 +10,13 @@ const Cart = () => {
     const handleRemove = (id) => {
         dispatch(remove(id))
     }
-     
-   
+
+
     const key = 'id';
 
-const arrayUniqueByKey = [...new Map(cartItem.map(item =>
-  [item[key], item])).values()];
-console.log(arrayUniqueByKey);
+    const arrayUniqueByKey = [...new Map(cartItem.map(item =>
+        [item[key], item])).values()];
+    console.log(arrayUniqueByKey);
 
 
     const p = arrayUniqueByKey.map(t => {
@@ -29,32 +29,48 @@ console.log(arrayUniqueByKey);
     }
 
     const data = arrayUniqueByKey.map(item => (
-        
+
         <div key={item.id} className="cartCard">
-        <table className='tb'>
-            <tr>
-                <td><img className='cartimg' src={item.image} alt="" /></td>
-            </tr>
-            <tr>
-                <td><div className='title'>{item.title}</div></td>
+            <div className="cart_img">
+                <img src={item.image} alt="" />
+            </div>
+            <div className="product_info">
+                <h4>{item.title}</h4>
+                <h5> $ {item.price}</h5>
+            </div>
+        </div>
+    ))
+    const renderTotalProduct = arrayUniqueByKey.map(total => (
+        <React.Fragment>
+            <div className="total_product_info">
+                <div className="total_info">
+                    <h5>{total.title}</h5>
+                </div>
+                <div className="price_total">
+                    <p>${total.price}</p>
+                </div>
 
-            </tr>
-            <tr>
-                <td><h5 className='price'>{item.price}$</h5></td>
-            </tr>
-           
-            <tr>
-                <td><button className="btnCart"onClick={() => handleRemove(item.id)}>Remove</button></td>
 
-            </tr>
-        </table>
-    </div>
+            </div>
+
+        </React.Fragment>
     ))
     return (
         <div className="cartContainer">
+            <div className="card-body">
                 {data}
-            <hr />
-            <div className= 'total' style={{ textAlign: 'right' }}>Total of cart: {sum} $</div>
+                <button onClick={handleRemove}>Remove</button>
+            </div>
+            <div className='total'>
+                {renderTotalProduct}
+                <div className="total_sum">
+                    <div className="sum">
+                        <h4>Total</h4>
+                        <h4>$ {sum}</h4>
+                    </div>
+                </div>
+            </div>
+
         </div>
     )
 }
