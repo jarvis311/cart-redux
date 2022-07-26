@@ -2,7 +2,6 @@
     height: 20vh;
 }
 .card {
-    background: white;
     padding: 20px;
     text-align: center;
     width: 100%;
@@ -13,6 +12,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
+    
 }
 .card > .btn-div{
     position: absolute;
@@ -28,21 +28,6 @@
     font-size: 1.5rem;
     margin-bottom: 4rem;
 } 
-.btn {
-    border: none;
-    outline: none;
-    background: #764abc;
-    padding: 5px 10px;
-    color: #fff;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-}
-
-.btn:hover {
-    background: #513282;
-}
 
 .heading {
     padding: 25px 0;
@@ -57,7 +42,10 @@
     color: black;
     margin-left: 20px;
 }
-
+a{
+    color: black;
+    
+}
 
 @media screen and (max-width:600px) {
     .productsWrapper {

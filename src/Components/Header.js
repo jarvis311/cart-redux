@@ -13,8 +13,7 @@ const Header = () => {
             <Link to='/cart' className="brand-logo right"><ShoppingCartIcon/>{cartItemValue.length}</Link>
             <ul id="nav-mobile" className="left ">
               <li><Link to='/'>Home</Link></li>
-              <li><Link to='/cart'>Cart</Link></li>
-            
+        
             </ul>
           </div>
         </nav>

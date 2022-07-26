@@ -10,8 +10,6 @@ const Cart = () => {
     const handleRemove = (id) => {
         dispatch(remove(id))
     }
-
-
     const key = 'id';
 
     const arrayUniqueByKey = [...new Map(cartItem.map(item =>
@@ -29,7 +27,6 @@ const Cart = () => {
     }
 
     const data = arrayUniqueByKey.map(item => (
-
         <div key={item.id} className="cartCard">
             <div className="cart_img">
                 <img src={item.image} alt="" />
@@ -37,6 +34,8 @@ const Cart = () => {
             <div className="product_info">
                 <h4>{item.title}</h4>
                 <h5> $ {item.price}</h5>
+                <button className='remove_btn' onClick={() => handleRemove(item.id)}>Remove</button>
+
             </div>
         </div>
     ))
@@ -55,11 +54,19 @@ const Cart = () => {
 
         </React.Fragment>
     ))
+
+    if(arrayUniqueByKey.length === 0){
+        return (
+            <div className='empty_cart'>
+                <h1 >Your cart is empty</h1>
+                <img src="https://alphapharmaexhibitions.com/images/cartempty1.png" alt="" />
+            </div>
+        )
+    }
     return (
         <div className="cartContainer">
             <div className="card-body">
                 {data}
-                <button onClick={handleRemove}>Remove</button>
             </div>
             <div className='total'>
                 {renderTotalProduct}
@@ -68,6 +75,9 @@ const Cart = () => {
                         <h4>Total</h4>
                         <h4>$ {sum}</h4>
                     </div>
+                </div>
+                <div className="pay">
+                    <button>Proccesed to pay</button>
                 </div>
             </div>
 
