@@ -29,7 +29,7 @@
 }
 
 .cartimg {
-    width: 10vw;
+    width: 5vw;
 }
 
 .btnCart {
@@ -192,6 +192,9 @@
         display: grid;
         grid-template-columns: 1fr;
         
+    }
+    .cart_img>img {
+        height: 101px;
     }
   
 }

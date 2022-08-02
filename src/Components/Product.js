@@ -11,7 +11,6 @@ const Product = () => {
       const fetchProduct = async () => {
         const res = await fetch('https://fakestoreapi.com/products')
         const data = await res.json();
-        console.log(data);
         setProduct(data)
       }
       fetchProduct()
@@ -26,8 +25,8 @@ const Product = () => {
 
   const renderProduct = product.map(item => (
 
-    <Link to={`/infoproduct/${item.id}`}>
-      <div className="card" key={item.id}>
+    <Link key={item.id} to={`/infoproduct/${item.id}`}>
+      <div className="card" >
         <img src={item.image} alt="" />
         <h4>{item.title}</h4>
         <h5> Price {item.price}$</h5>
@@ -37,7 +36,7 @@ const Product = () => {
   ))
 
   return (
-    <div className="productsWrapper">
+    <div >
       {renderProduct}
     </div>
   )

@@ -41,7 +41,7 @@ const Cart = () => {
     ))
     const renderTotalProduct = arrayUniqueByKey.map(total => (
         <React.Fragment>
-            <div className="total_product_info">
+            <div key={total.id} className="total_product_info">
                 <div className="total_info">
                     <h5>{total.title}</h5>
                 </div>

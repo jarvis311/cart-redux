@@ -61,10 +61,7 @@ const SingleProduct = () => {
                     </div>
                 </div>
                 <div className="card__footer">
-                    <div className="recommend">
-                        <p>Recommended by</p>
-                        <h3>Andrew Palmer</h3>
-                    </div>
+        
                     <div className="action">
                         <button onClick={() => handleAdd(product)} type="button">Add to cart</button>
                     </div>
